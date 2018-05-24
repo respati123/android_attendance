@@ -124,6 +124,17 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
         }
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, new LocationCallback() {
+
+                    @Override
+                    public void onLocationResult(LocationResult locationResult) {
+                        Location location = locationResult.getLastLocation();
+                        onLocationChanged(location);
+                    }
+                },
+                Looper.myLooper());
+
+
         btnCheckIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,21 +185,6 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
                 markerOptions
                         .title("kantor")
                         .position(new LatLng(Double.valueOf("-6.2155341"), Double.valueOf("106.8555813"))));
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            requestPermissions(new String[]{
-                    Manifest.permission.ACCESS_COARSE_LOCATION,
-                    Manifest.permission.ACCESS_FINE_LOCATION}, 2);
-            checkPermission();
-        }
-        fusedLocationProviderClient.requestLocationUpdates(locationRequest, new LocationCallback() {
-
-                    @Override
-                    public void onLocationResult(LocationResult locationResult) {
-                        Location location = locationResult.getLastLocation();
-                        onLocationChanged(location);
-                    }
-                },
-                Looper.myLooper());
 
     }
 
