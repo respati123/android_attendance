@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="radio_group" type="id">radio_group</item>
+    <item name="buttonInd" type="id">buttonInd</item>
+    <item name="buttonIng" type="id">buttonIng</item>
+    <item name="buttonAge" type="id">buttonAge</item>
+</resources>

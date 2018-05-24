@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="231dp"
+        android:background="#edede1"
+        android:elevation="@dimen/cardview_compat_inset_shadow"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maps"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="20dp"
+            android:background="#ffffff"
+            android:divider="@color/black"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:showDividers="end">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/txtHour"
+                android:gravity="center"
+                android:text="1 hour remaining"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:visibility="invisible"/>
+            <ProgressBar
+                style="@style/MySwitch"
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:theme="@style/CircularProgress"
+                android:visibility="visible"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1 hour remaining"
+                android:id="@+id/txtDistance"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_check_in"
+                android:layout_width="293dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_check_in"
+                android:text="Check In"
+                android:enabled="false"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <fragment xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/maps"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="545dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1"
+        tools:context="com.android.victory.schedule.activity.CheckInActivity" />
+
+</android.support.constraint.ConstraintLayout>

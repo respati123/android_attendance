@@ -1,0 +1,230 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:fillViewport="true">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_all"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.android.victory.schedule.activity.LoginActivity"
+        tools:layout_editor_absoluteY="25dp"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/layout_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="148dp"
+                android:layout_height="89dp"
+                android:src="@drawable/logo" />
+
+            <ImageView
+
+                android:layout_width="153dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/welcome" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otp_layout"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/layout_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="622dp"
+            android:gravity="center">
+
+
+            <com.alimuzaffar.lib.pin.PinEntryEditText
+                android:id="@+id/otp_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:digits="1234567890"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textIsSelectable="false"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                app:pinAnimationType="popIn"
+                app:pinLineColors="#FFFFFF"
+                app:pinLineStroke="2dp"
+                app:pinLineStrokeSelected="4dp">
+
+            </com.alimuzaffar.lib.pin.PinEntryEditText>
+
+
+
+            <ProgressBar
+                android:id="@+id/progress1"
+                style="@style/MySwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otp_edittext"
+                android:layout_marginTop="10dp"
+                android:theme="@style/CircularProgress"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            android:id="@+id/account_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_logo"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_logo"
+            tools:orientation="vertical"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:errorTextAppearance="@style/error_validating">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/comp_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_margin="10dp"
+                    android:maxLength="4"
+                    android:focusable="auto"
+                    android:hint="Comp"
+                    android:textColor="#FFFFFF"
+                    android:inputType="number"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:errorTextAppearance="@style/error_validating">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/username_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:focusable="auto"
+                    android:hint="Username"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:inputType="textPersonName" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:errorTextAppearance="@style/error_validating">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/pwd_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:focusable="auto"
+                    android:hint="Password"
+                    android:textAllCaps="true"
+                    android:inputType="textPassword|textVisiblePassword|textWebPassword|numberPassword|textCapWords"
+                    android:textColor="#FFFFFF"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#39577B"
+                    android:text="Enabled Visible password"/>
+                <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:id="@+id/pass_switch"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ProgressBar
+                    style="@style/MySwitch"
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pass_switch"
+                    android:layout_marginTop="5dp"
+                    android:theme="@style/CircularProgress"
+                    android:visibility="gone"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnSign"
+                    style="@style/btnSign"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/back_btn_sign"
+                    android:text="Sign In" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

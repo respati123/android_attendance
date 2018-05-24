@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/monitorImgView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginTop="68dp"
+        android:src="@drawable/monitor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkOutView" />
+
+    <ImageView
+        android:id="@+id/checkInView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:src="@mipmap/check_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/scheduleImgView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="68dp"
+        android:src="@drawable/schedule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkInView" />
+
+    <ImageView
+        android:id="@+id/checkOutView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="64dp"
+        android:src="@mipmap/check_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkInView" />
+</android.support.constraint.ConstraintLayout>
