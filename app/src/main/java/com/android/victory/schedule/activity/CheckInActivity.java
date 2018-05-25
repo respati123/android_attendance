@@ -119,21 +119,8 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setFastestInterval(FASTEST_INTERVAL);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            checkPermission();
-        }
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
-
-        fusedLocationProviderClient.requestLocationUpdates(locationRequest, new LocationCallback() {
-
-                    @Override
-                    public void onLocationResult(LocationResult locationResult) {
-                        Location location = locationResult.getLastLocation();
-                        onLocationChanged(location);
-                    }
-                },
-                Looper.myLooper());
-
 
         btnCheckIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +128,9 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
                 Toast.makeText(CheckInActivity.this, "hadir", Toast.LENGTH_SHORT).show();
             }
         });
+
+
+
 
     }
 
@@ -178,6 +168,7 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
 
     @Override
     public void onMapReady(final GoogleMap googleMap) {
+
         mMap = googleMap;
         markerOptions = new MarkerOptions();
 
@@ -185,6 +176,19 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
                 markerOptions
                         .title("kantor")
                         .position(new LatLng(Double.valueOf("-6.2155341"), Double.valueOf("106.8555813"))));
+
+        checkPermission();
+        mMap.setMyLocationEnabled(true);
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, new LocationCallback() {
+
+                    @Override
+                    public void onLocationResult(LocationResult locationResult) {
+                        Location location = locationResult.getLastLocation();
+                        Log.d("looping", "Looping");
+                        onLocationChanged(location);
+                    }
+                },
+                Looper.myLooper());
 
     }
 
@@ -236,6 +240,8 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
                             prgCheckIn.setVisibility(View.GONE);
                             txtHour.setVisibility(View.VISIBLE);
                             txtDistance.setVisibility(View.VISIBLE);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Jarak jauh dari target", Toast.LENGTH_LONG).show();
                         }
                     }
                 } else
@@ -259,7 +265,7 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
             requestPermissions(new String[]{
                     Manifest.permission.ACCESS_COARSE_LOCATION,
                     Manifest.permission.ACCESS_FINE_LOCATION}, 2);
-                    checkPermission();
+            checkPermission();
         }
         fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
             @Override
@@ -274,6 +280,7 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
                 }
             }
         });
+
     }
 
     @Override
@@ -321,6 +328,7 @@ public class CheckInActivity extends AppCompatActivity implements OnMapReadyCall
 
         latitude1 = location.getLatitude();
         longitude1 = location.getLongitude();
+
 
         getDirection();
         createMarker();
