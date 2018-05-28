@@ -343,8 +343,19 @@ public class AddScheduleActivityTry extends AppCompatActivity implements View.On
                 NetworkService.uploadSchedule(salesRowIdList.get(salesSpinner.getSelectedItemPosition()), clientRowIdList.get(clientSpinner.getSelectedItemPosition()), jobRowIdList.get(jobSpinner.getSelectedItemPosition()), serviceRowIdList.get(serviceSpinner.getSelectedItemPosition())
                         , descEditText.getText().toString(), meetEditText.getText().toString(), txtDate.getText().toString() + "---" + txtTime.getText().toString(), rowID);
                 break;
+            case R.id.sch_cancel:
+                Intent intent = new Intent(this, ScheduleActivity.class);
+                startActivity(intent);
+                finish();
+                break;
                 default:
                     break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, ScheduleActivity.class));
+        finish();
     }
 }
