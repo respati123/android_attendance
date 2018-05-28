@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -9,4 +9,6 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:colorPrimary">@color/background_all</item>
     </style>
+
+
 </resources>

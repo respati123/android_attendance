@@ -22,7 +22,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:layout_gravity="center"
-            android:weightSum="10">
+            android:weightSum="13">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -164,6 +164,7 @@
                 android:textStyle="bold"
                 android:hint="Click TIME "
                 android:text=""
+                android:textColor="@color/black"
                 android:id="@+id/textTime" />
 
             <LinearLayout
@@ -227,6 +228,29 @@
                     android:layout_width="0dp"
                     android:scrollbars="vertical"
                     android:background="@drawable/bg_textfield"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="3"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/sch_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Save"
+                    android:background="@drawable/button_shape"/>
+                <Button
+                    android:id="@+id/sch_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="cancel"
+                    android:background="@drawable/button_shape"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

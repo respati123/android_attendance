@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -8,10 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlNormal">#FFFFFF</item>
         <item name="colorControlActivated">#FFFFFF</item>
-        <item name="colorControlHighlight">#FF002B</item>
+        <item name="colorControlHighlight">@color/indigo</item>
         <item name="android:textColorHint">#FFFFFF</item>
-        <item name="android:textColor">@color/textColorLogin</item>
+        <item name="android:textColor">@color/black</item>
 
+    </style>
+
+    <style name="CustomPickerTheme">
+        <item name="colorAccent">@color/background_all</item>
+        <item name="colorControlActivated">@color/background_all</item>
+        <item name="android:textColor">@color/background_all</item>
+        <item name="colorControlHighlight">@color/indigo</item>
+        <item name="colorControlNormal">@color/background_all</item>
     </style>
 
     <style name="AppTheme.Main" parent="Theme.AppCompat.Light.NoActionBar">

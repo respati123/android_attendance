@@ -573,7 +573,7 @@ public class ScheduleActivity extends AppCompatActivity
                                     scheduleIndex = i;
                                 }
                             }
-                            Intent intent = new Intent(ScheduleActivity.this, AddScheduleActivity.class);
+                            Intent intent = new Intent(ScheduleActivity.this, AddScheduleActivityTry.class);
                             intent.putExtra("ISEDIT",true);
                             if (!schedule.getDone_date().isEmpty()){
                                 intent.putExtra("ISDONE",true);
